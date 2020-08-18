@@ -1,0 +1,21 @@
+rule:
+  meta:
+    name: execute command via popen
+    namespace: host-interaction/process
+    author: "@_re_fox"
+    scope: function
+    examples:
+      - 075b6695ab63f36af65f7ffd45cccd39:0x0804b7f
+  features:
+    - and:
+      - api: popen
+      - api: feof
+      - api: fgets
+      - api: pclose
+      - characteristic: contains loop
+      - optional:
+        - or:
+          - api: calloc
+          - and:
+            - api: malloc
+            - api: memset
