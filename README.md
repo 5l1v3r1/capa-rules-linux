@@ -1,1 +1,1 @@
-# capa-rules-linux
+# Capa Rules for Linux
