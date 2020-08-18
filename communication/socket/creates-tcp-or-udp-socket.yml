@@ -1,0 +1,16 @@
+rule:
+  meta:
+    name: creates tcp or udp socket
+    namespace: communication/socket
+    author: "@_re_fox"
+    scope: basic block
+    examples:
+      - 075b6695ab63f36af65f7ffd45cccd39:0x080585a2
+  features:
+    - and:
+      - number: 0x2 = AF_INET
+      - number: 0x1 = SOCK_STREAM
+      - or:
+        - number: 0x6 = IPPROTO_TCP
+        - number: 0x11 = IPPROTO_UDP
+      - api: socket
