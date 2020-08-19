@@ -1,0 +1,12 @@
+rule:
+  meta:
+    name: invoke system call
+    namespace: host-interaction/process
+    author: "@_re_fox"
+    scope: basic block
+    examples:
+      - d88c737b46f1dcb981b4bb06a3caf4d7:0x08061d06
+  features:
+    - and:
+      - mnemonic: int
+      - number: 0x80
