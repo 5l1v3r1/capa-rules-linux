@@ -1,0 +1,20 @@
+rule:
+  meta:
+    name: execute process via fork and exec
+    namespace: host-interaction/process
+    author: "@_re_fox"
+    scope: function
+    examples:
+      - ea06b213d5924de65407e8931b1e4326:0x0804a4e0
+  features:
+    - and:
+      - api: fork
+      - or: 
+        - api: execve 
+        - api: execl
+        - api: execlp
+        - api: execle
+        - api: execv
+        - api: execvp
+        - api: execvpe
+      
